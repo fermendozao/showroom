@@ -1,0 +1,30 @@
+header {
+	background: url('../images/background.png');
+	box-shadow: 0 -2px 9px 0 rgba(0,0,0,0.5) inset;
+	padding: 	0 100px;
+	.logo {
+		margin: 10px 0;
+		a {
+			@include text-hide;
+			background: url(../images/logo-header.png) no-repeat;
+			display: 	block;
+			height: 	100px;
+			width: 		156px;
+		}
+	}
+	.nav {
+		li {
+			display: 	inline-block;
+			margin: 	40px 15px;
+			a {
+				color: 			black;
+				text-transform: uppercase;
+				&:hover {
+					background-color: 	transparent;
+					color: 				$show-red;
+				}
+			}
+			&.active a { color: $show-red; }
+		}
+	}
+}
