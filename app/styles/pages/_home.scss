@@ -1,0 +1,87 @@
+body.home, html{
+	margin: 	0;
+	overflow: 	hidden;
+	transition: opacity 400ms;
+}
+
+body.home{
+
+	.main{
+		margin-top: 120px;
+	}
+	.section{
+		
+		.bg-section{
+			background-repeat: no-repeat;
+			width: 		100%;
+			height: 	75%;
+			display: 	table;
+
+			.middle-container{
+				display: 		table-cell;
+				vertical-align: middle;
+
+				.content{
+					width: 				802px;
+					padding: 			60px 42px;
+					background-color: 	rgba(0,0,0,.5);
+					margin: 			0 auto;
+					text-align: 		right;
+
+					h1, h2{
+						color: 	white;
+					}
+				}
+			}
+		}
+
+		.title{
+			width: 		100%;
+			text-align: center;
+
+			h3{
+				margin: 		0;
+				line-height: 	2.5em;
+				text-transform: uppercase;
+			}
+		}
+		.cook{
+			background: 		url('../images/sections/cook.jpg');
+			background-size: 	cover;
+			border-top:  		8px solid $show-orange;
+			border-bottom: 		8px solid $show-orange;
+		}
+		.bath{
+			background: 		url('../images/sections/bath.jpg');
+			background-size: 	cover;
+			border-top:  		8px solid $show-aqua;
+			border-bottom: 		8px solid $show-aqua;
+		}
+		.rooms{
+			background: 		url('../images/sections/rooms.jpg');
+			background-size: 	cover;
+			border-top:  		8px solid $show-yellow;
+			border-bottom: 		8px solid $show-yellow;
+		}
+		.studio{
+			background: 		url('../images/sections/studio.jpg');
+			background-size: 	cover;
+			border-top:  		8px solid $show-blue;
+			border-bottom: 		8px solid $show-blue;
+		}
+		.dining{
+			background: 		url('../images/sections/dining.jpg');
+			background-size: 	cover;
+			border-top:  		8px solid $show-purple;
+			border-bottom: 		8px solid $show-purple;
+		}
+		.contact{
+			background: 		url('../images/sections/contact.jpg');
+			background-size: 	cover;
+			border-top:  		8px solid $show-red;
+			border-bottom: 		8px solid $show-red;
+		}
+	}
+
+
+}

@@ -2,6 +2,9 @@ header {
 	background: url('../images/background.png');
 	box-shadow: 0 -2px 9px 0 rgba(0,0,0,0.5) inset;
 	padding: 	0 100px;
+	position: 	fixed;
+	width: 		100%;
+	z-index: 	1;
 	.logo {
 		margin: 10px 0;
 		a {
