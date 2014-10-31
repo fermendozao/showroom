@@ -28,3 +28,18 @@ header {
 		}
 	}
 }
+footer {
+	background-color: 	$show-black;
+	padding: 			20px 100px;
+	.logo {
+		background: url('../images/logo-footer.png') no-repeat;
+		display: 	inline-block;
+		height: 	66px;
+		width: 		101px;
+	}
+	.rights {
+		color: 			white;
+		font-size: 		11px;
+		line-height: 	65px;
+	}
+}
