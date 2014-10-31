@@ -43,17 +43,8 @@ body.cover {
 				.cover{
 					padding: 0 20px;
 
-					.main{
-						width: 		804px;
-						margin: 	0 auto;
-						background: rgba(0,0,0,.5);
-						padding: 	60px 42px;
-						position: 	relative;
-
-						@media (max-width: $screen-sm-min){
-							width: 		100%;
-						}
-
+					.main-cover{
+						
 						.social{
 							width: 	    65px;
 							position:   absolute;

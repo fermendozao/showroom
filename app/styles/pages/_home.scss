@@ -1,4 +1,4 @@
-body.home, html{
+body.home{
 	margin: 	0;
 	overflow: 	hidden;
 	transition: opacity 400ms;
@@ -6,9 +6,6 @@ body.home, html{
 
 body.home{
 
-	.main{
-		margin-top: 120px;
-	}
 	.section{
 		
 		.bg-section{
@@ -21,13 +18,7 @@ body.home{
 				display: 		table-cell;
 				vertical-align: middle;
 
-				.content{
-					width: 				802px;
-					padding: 			60px 42px;
-					background-color: 	rgba(0,0,0,.5);
-					margin: 			0 auto;
-					text-align: 		right;
-
+				.main-cover{
 					h1, h2{
 						color: 	white;
 					}
@@ -41,8 +32,11 @@ body.home{
 
 			h3{
 				margin: 		0;
-				line-height: 	2.5em;
+				line-height: 	2em;
 				text-transform: uppercase;
+				font-family: 	$light;
+				font-size: 		2.8em;
+				color: 			$show-gray-light;
 			}
 		}
 		.cook{

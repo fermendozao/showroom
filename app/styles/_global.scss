@@ -5,29 +5,64 @@ header {
 	position: 	fixed;
 	width: 		100%;
 	z-index: 	1;
-	.logo {
-		margin: 10px 0;
-		a {
-			@include text-hide;
-			background: url(../images/logo-header.png) no-repeat;
-			display: 	block;
-			height: 	100px;
-			width: 		156px;
+	top: 		0;
+
+	.navbar-default{
+		border: 	none;
+		background: transparent;
+	}
+	.navbar{
+		margin: 	0;
+
+		.navbar-toggle{
+			margin-top: 	40px;
 		}
+	}
+	.logo {
+		margin: 	10px 0;
+		@include text-hide;
+		background: url(../images/logo-header.png) no-repeat;
+		display: 	inline-block;
+		height: 	100px;
+		width: 		156px;
 	}
 	.nav {
 		li {
 			display: 	inline-block;
-			margin: 	40px 15px;
+			margin: 	25px 10px;
+
+			@media (max-width: $screen-md-min){
+					margin: 25px 2px;
+			}
+			
 			a {
 				color: 			black;
 				text-transform: uppercase;
+				padding: 		20px 8px;
 				&:hover {
 					background-color: 	transparent;
 					color: 				$show-red;
 				}
+
+				@media (max-width: $screen-md-min){
+					padding: 	20px 2px;
+					font-size: 	12px;
+				}
+
+				@media (max-width: $screen-sm-min){
+					padding: 	8px 2px;
+					font-size: 	12px;
+				}
 			}
-			&.active a { color: $show-red; }
+			&.active a { 
+				color: $show-red; 
+			}
+
+			@media (max-width: $screen-sm-min){
+				margin: 	5px;
+				width: 		45%;
+				text-align: center;
+			}
 		}
 	}
 }
@@ -44,5 +79,20 @@ footer {
 		color: 			white;
 		font-size: 		11px;
 		line-height: 	65px;
+	}
+}
+.main {
+	margin-top: 120px;
+}
+
+.main-cover{
+	width: 		804px;
+	margin: 	0 auto;
+	background: rgba(0,0,0,.5);
+	padding: 	60px 42px;
+	position: 	relative;
+
+	@media (max-width: $screen-sm-min){
+		width: 		100%;
 	}
 }
