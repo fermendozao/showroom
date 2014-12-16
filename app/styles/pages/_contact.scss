@@ -23,7 +23,25 @@ body.contact {
 		padding: 		0 80px;
 		vertical-align: top;
 		width: 			75%;
+		.icons {
+			background-color: 	#7b7b7b;
+			padding: 			10px 10px 5px;
+			margin-bottom: 		10px;
+			a {
+				background: url('../images/social-contact.png') no-repeat;
+				display: 	inline-block;
+				height: 	33px;
+				width: 		35px;
+				&.fb, &.tw { margin-right: 5px; }
+				&.tw { background-position: -47px; }
+				&.yt { background-position: -94px; }
+			}
+		}
 		h2 {
+			clear: 			both;
+			font-family: 	$light;
+			font-family: 	40px;
+			margin-top: 	10px;
 			text-transform: uppercase;
 		}
 		hr{
