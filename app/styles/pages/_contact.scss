@@ -20,23 +20,10 @@ body.contact {
 	.content {
 		background: 	url('../images/background.png');
 		display: 		inline-block;
-		padding: 		0 80px;
+		padding: 		80px 80px 0;
 		vertical-align: top;
 		width: 			75%;
-		.icons {
-			background-color: 	#7b7b7b;
-			padding: 			10px 10px 5px;
-			margin-bottom: 		10px;
-			a {
-				background: url('../images/social-contact.png') no-repeat;
-				display: 	inline-block;
-				height: 	33px;
-				width: 		35px;
-				&.fb, &.tw { margin-right: 5px; }
-				&.tw { background-position: -47px; }
-				&.yt { background-position: -94px; }
-			}
-		}
+		
 		h2 {
 			clear: 			both;
 			font-family: 	$light;
