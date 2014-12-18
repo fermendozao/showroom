@@ -1,18 +1,24 @@
 body.contact {
-	.main { 
-		background-color: 	$show-red;
+	overflow: scroll;
+	.main {
 		color: 				$show-gray;
+		height: 			100%;
+		margin: 			120px 0 0;
 	}
 	.sidebar {
 		background-color: 	$show-red;
+		cursor: 			pointer;
 		display: 			inline-block;
+		height: 			100%;
 		padding-right: 		50px;
+		position: 			fixed;
 		text-align: 		right;
 		vertical-align: 	top;
 		width: 				25%;
 		h3 {
 			color: 			white;
-			margin-top: 	350px;
+			position: 		relative;
+			top: 			30%;
 			text-transform: uppercase;
 			text-shadow: 	1px 1px 2px rgba(0,0,0,0.5);
 		}
@@ -22,6 +28,7 @@ body.contact {
 		display: 		inline-block;
 		padding: 		80px 80px 0;
 		vertical-align: top;
+		margin-left: 	25%;
 		width: 			75%;
 		
 		h2 {
@@ -37,19 +44,19 @@ body.contact {
 		}
 		form {
 			.form-group {
-				label, input[type="text"], input[type="email"] { display: block; }
+				label, input { display: block; }
 				label {
 					font-weight: 	400;
 					margin-bottom: 	0;
 					text-transform: uppercase;
 				}
-				input[type="text"], input[type="email"], textarea {
+				input, textarea {
 					border-radius: 	3px;
 					border: 		1px solid #ccc;
 					box-shadow: 	0 1px 1px rgba(0,0,0,0.2) inset;
 					width: 			90%;
 				}
-				input[type="text"], input[type="email"] { height: 30px; }
+				input { height: 30px; }
 				textarea { height: 130px; }
 			}
 			.check-group {
@@ -58,28 +65,26 @@ body.contact {
 					font-weight: 	400;
 				}
 			}
-			.progress-button {
-				background-color: 	#2a9c02;
-				border-radius: 		5px;
-				border: 			none;
-				box-shadow: 		1px 1px 2px rgba(0,0,0,0.5);
-				color: 				white;
-				font-size: 			18px;
-				padding: 			10px 20px;
-			}
 			.advice { 
 				color: 		red;
 				display: 	block;
 				font-size: 	11px;
 				margin-top: 10px;
 			}
+			.progress-button {
+				.content {
+					display: 	block;
+					margin: 	0;
+					width: 		auto;
+				}
+				.progress { border-radius: 0; }
+			}
 		}
 		.phones {
-			background: url('../images/phone.png') !important;
 			display: 	block;
-			height: 	331px;
 			margin: 	15px auto 0;
 			width: 		332px;
+			img { width: 100%; }
 		}
 		.bottom {
 			text-align: center;
@@ -96,6 +101,41 @@ body.contact {
 			display: 	block;
 			height: 	200px;
 			width: 		100%;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.content {
+			.phones { width: 100%; }
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.sidebar { padding-right: 30px; }
+		.content {
+			padding: 80px 30px 0;
+			form {
+				.form-group {
+					input,
+					textarea
+					{ width: 100% !important; }
+				}
+			}
+			.phones { width: 332px; }
+		}
+	}
+	@media screen and (max-width: 640px) {
+		.sidebar {
+			h3 { font-size: 18px; }
+		}
+	}
+	@media screen and (max-width: 480px) {
+		.sidebar {
+			width: 30%;
+			h3 { font-size: 16px; }
+		}
+		.content {
+			margin-left: 	30%;
+			width: 			70%;
+			.phones { width: 100%; }
 		}
 	}
 }
