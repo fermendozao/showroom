@@ -5,8 +5,12 @@ body.home{
 }
 
 body.home{
-
 	.section{
+		animation: fadein 2s;
+
+		@media (min-width: $screen-md-min){
+			padding-bottom: 120px;
+		}
 		
 		.bg-section{
 			background-repeat: no-repeat;
