@@ -124,6 +124,9 @@ header {
 				opacity: 1;
 			}
 		}
+		@media (max-width: $screen-md-min){
+			right: 75%;
+		}
 
 		@media (max-width: $screen-sm-min){
 			display: none;
@@ -140,7 +143,7 @@ footer {
 		clear: 		both;
 	}
 
-	@media (min-width: $screen-md-min){
+	@media (min-width: $screen-sm-min){
 		position: 	fixed;
 		bottom: 	0;
 		width: 		100%;
