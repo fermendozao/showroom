@@ -38,7 +38,7 @@ body.sbtemplate {
 			}
 		}
 		
-		@media (max-width: $screen-sm-min){
+		@media (max-width: $screen-md-min){
 			float: 		right;
 			width: 		100%;
 			height: 	auto;
@@ -58,7 +58,7 @@ body.sbtemplate {
 		margin-left: 	25%;
 		width: 			75%;
 
-		@media (max-width: $screen-sm-min){
+		@media (max-width: $screen-md-min){
 			float: 		right;
 			width: 		100%;
 		}
