@@ -5,6 +5,11 @@ body.home{
 }
 
 body.home{
+	.wrapper-content {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
 	.section{
 		animation: fadein 2s;
 
