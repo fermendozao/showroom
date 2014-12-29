@@ -4,70 +4,85 @@
 var SITE = {
 	common: {
 		init: function(){
-			var loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 100 } ),
-				replaceAll = function () {
-					$('body').on('click', '.sidebar', function(){
-						// Display page load overlay
-						loader.show();
-						// Replace content, change classes and hide page load overlay
-						setTimeout(function(){
-							$('.wrapper-content').load('/home.html .main', function(){
-								$('body').removeClass();
-								$('body').addClass('home');
-
-								// Add one page scroll
-								$('.main').onepage_scroll({
-									sectionContainer: 'section',     // sectionContainer accepts any kind of selector in case you don't want to use section
-									easing: 'ease',                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-																   	 // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-									animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
-									pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-									updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-									loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-									keyboard: true,                  // You can activate the keyboard controls
-									responsiveFallback: false,       // You can fallback to normal page scroll by defining the width of the browser in which
-																   	 // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-																   	 // the browser's width is less than 600, the fallback will kick in.
-									direction: 'vertical'            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
-								});
-								//$('.onepage-wrapper').removeAttr("style");
-								// Add original events after all elements are available
-								replaceUnique();
-								loader.hide();
-								$('.pageload-overlay').removeClass('active');
-							});
-						}, 900);
-					});
-				},
-				replaceUnique = function () {
-					$('.main-cover').each(function (i,el){
-						$(el).on('click', function (e){
-							e.preventDefault();
-							// Get page to load and get classes for body
-							var url = $(this).attr('href'),
-								classes = $(this).data('classes');
+			if ( $('#loader-go').length >0 ) {
+				var loaderGo = new SVGLoader( document.getElementById( 'loader-go' ), { speedIn : 100 } ),
+					loaderBack = new SVGLoader( document.getElementById( 'loader-back' ), { speedIn : 400, easingIn : mina.easeinout } ),
+					replaceAll = function () {
+						$('body').on('click', '.sidebar', function(){
 							// Display page load overlay
-							loader.show();
-							$('.pageload-overlay').addClass('active');
+							loaderBack.show();
+							$('#loader-back').addClass('active');
 							// Replace content, change classes and hide page load overlay
 							setTimeout(function(){
-								$('.wrapper-content').load(url + ' .main', function(){
-									$('.onepage-pagination').remove();
+								$('.wrapper-content').load('/home.html .main', function(){
 									$('body').removeClass();
-									$('body').addClass(classes);
-									$('.onepage-wrapper').removeAttr("style");
+									$('body').addClass('home');
+
+									// Add one page scroll
+									$('.main').onepage_scroll({
+										sectionContainer: 'section',     // sectionContainer accepts any kind of selector in case you don't want to use section
+										easing: 'ease',                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+																	   	 // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+										animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+										pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+										updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+										loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+										keyboard: true,                  // You can activate the keyboard controls
+										responsiveFallback: false,       // You can fallback to normal page scroll by defining the width of the browser in which
+																	   	 // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+																	   	 // the browser's width is less than 600, the fallback will kick in.
+										direction: 'vertical'            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+									});
+									//$('.onepage-wrapper').removeAttr("style");
 									// Add original events after all elements are available
-									replaceAll();
-									loader.hide();
-									$('.pageload-overlay').removeClass('active');
+									replaceUnique();
+									loaderBack.hide();
+									$('#loader-back').removeClass('active');
 								});
 							}, 900);
 						});
-					});
-				};
+					},
+					replaceUnique = function () {
+						$('.main-cover').each(function (i,el){
+							$(el).on('click', function (e){
+								e.preventDefault();
+								// Get page to load and get classes for body
+								var url = $(this).attr('href'),
+									classes = $(this).data('classes');
+								// Display page load overlay
+								loaderGo.show();
+								$('#loader-go').addClass('active');
+								// Replace content, change classes and hide page load overlay
+								setTimeout(function(){
+									$('.wrapper-content').load(url + ' .main', function(){
+										$('.onepage-pagination').remove();
+										$('body').removeClass();
+										$('body').addClass(classes);
+										$('.onepage-wrapper').removeAttr("style");
+										// Add original events after all elements are available
+										replaceAll();
+										loaderGo.hide();
+										$('#loader-go').removeClass('active');
+										// Verify if is in contact page
+										if ($('body').hasClass('contact') !== 0) {
+											var $map = $('#map')[0],
+												options = {
+													center: new google.maps.LatLng(-34.397, 150.644),
+													zoom: 8,
+													mapTypeId: google.maps.MapTypeId.ROADMAP
+												},
+												map;
+											map = new google.maps.Map($map, options);
+										}
+									});
+								}, 900);
+							});
+						});
+					};
 				// Fire events
 				replaceAll();
 				replaceUnique();
+			}
 		}
 	},
 	home: {
