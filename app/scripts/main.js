@@ -19,8 +19,7 @@ var SITE = {
 									$('body').addClass('home');
 									loaderBack.hide();
 									$('#loader-back').removeClass('active');
-									// Add full page plugin
-									console.log('ADD');
+									// Add fullpage plugin
 									$('.main').fullpage();
 									// Add original events after all elements are available
 									replaceUnique();
@@ -38,7 +37,7 @@ var SITE = {
 								// Display page load overlay
 								loaderGo.show();
 								$('#loader-go').addClass('active');
-								console.log('DESTROY');
+								// Destroy fullpage events before load new content
 								$.fn.fullpage.destroy('all');
 								// Replace content, change classes and hide page load overlay
 								setTimeout(function(){
@@ -91,9 +90,9 @@ var SITE = {
 	},
 	home: {
 		init: function(){
-			// Add full page plugin
+			// Add fullpage plugin
 		   $('.main').fullpage();
-		   // Add full page plugin
+		   // Scroll sections with nav menu
 		    $('nav li a').on('click', function(e){
 		    	e.preventDefault();
 		    	var index = $(this).attr('data-menu');
