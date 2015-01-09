@@ -10,6 +10,10 @@ body.home{
 		height: 100%;
 		display: block;
 	}
+	.fp-tableCell{
+        vertical-align: top;
+        padding-top:    76px;
+	}
 	.section{
 		animation: fadein 2s;
 
@@ -20,7 +24,7 @@ body.home{
 		.bg-section{
 			background-repeat: no-repeat;
 			width: 		100%;
-			height: 	64%;
+			height: 	71%;
 			display: 	table;
 
 			.middle-container{
