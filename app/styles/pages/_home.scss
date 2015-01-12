@@ -24,8 +24,10 @@ body.home{
 		.bg-section{
 			background-repeat: no-repeat;
 			width: 		100%;
-			height: 	71%;
+			height: 	68%;
 			display: 	table;
+
+			@media (max-width: $screen-sm-min){height: 73%;}
 
 			.middle-container{
 				display: 		table-cell;
@@ -74,8 +76,8 @@ body.home{
 			text-align: center;
 
 			h3{
-				margin: 		0;
-				line-height: 	2em;
+				margin: 		20px;
+				line-height: 	1em;
 				text-transform: uppercase;
 				font-family: 	$light;
 				font-size: 		2.8em;

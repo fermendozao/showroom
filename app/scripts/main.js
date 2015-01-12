@@ -26,6 +26,28 @@ var SITE = {
 								});
 							}, 900);
 						});
+
+						$('nav li a').on('click', function(e){
+							e.preventDefault();
+							var index = $(this).attr('data-menu');
+							// Display page load overlay
+							loaderBack.show();
+							$('#loader-back').addClass('active');
+							// Replace content, change classes and hide page load overlay
+							setTimeout(function(){
+								$('.wrapper-content').load('/home.html .main', function(){
+									$('body').attr('class', '');
+									$('body').addClass('home');
+									loaderBack.hide();
+									$('#loader-back').removeClass('active');
+									// Add fullpage plugin
+									$('.main').fullpage();
+									// Add original events after all elements are available
+									replaceUnique();
+									$.fn.fullpage.moveTo(index);
+								});
+							}, 900);					
+						});
 					},
 					replaceUnique = function () {
 						$('.main-cover').each(function (i,el){

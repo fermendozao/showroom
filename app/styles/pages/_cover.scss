@@ -8,7 +8,8 @@ html, body{
 }
 
 body.cover {
-	color: 	white;
+	color: 		white;
+	overflow-y: 	scroll;
 
 	header, footer { display: none; }
 
@@ -46,7 +47,7 @@ body.cover {
 					padding: 0 20px;
 
 					.main-cover{
-						
+						@media screen and (max-width: $screen-sm-min){padding:60px 30px;}						
 						.social{
 							width: 	    65px;
 							position:   absolute;
